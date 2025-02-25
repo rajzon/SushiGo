@@ -1,8 +1,51 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SushiGo.Orders", "SushiGo.Orders", "{94884791-5A84-489B-8648-9A163A1D9087}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SushiGo.Orders.Api", "SushiGo.Orders\SushiGo.Orders.Api\SushiGo.Orders.Api.csproj", "{986CB283-0ACB-4708-86AE-F8856CCBAD07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SushiGo.Orders.Application", "SushiGo.Orders\SushiGo.Orders.Application\SushiGo.Orders.Application.csproj", "{3C8DDBA5-60DC-408E-BD1E-658035B6EF2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SushiGo.Orders.Infrastructure", "SushiGo.Orders\SushiGo.Orders.Infrastructure\SushiGo.Orders.Infrastructure.csproj", "{FBBAAEA3-F670-4F7F-A080-B70E595479C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SushiGo.Orders.Core", "SushiGo.Orders\SushiGo.Orders.Core\SushiGo.Orders.Core.csproj", "{C932EDC5-3D85-47B3-BE32-3FFBA1581833}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SushiGo.Payments", "SushiGo.Payments", "{C1C81B96-67BE-4052-8611-9184999E3BEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SushiGo.Payments.Api", "SushiGo.Payments\SushiGo.Payments.Api\SushiGo.Payments.Api.csproj", "{0F0D3396-FFB3-4126-9534-9935B75F1BA8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{986CB283-0ACB-4708-86AE-F8856CCBAD07} = {94884791-5A84-489B-8648-9A163A1D9087}
+		{3C8DDBA5-60DC-408E-BD1E-658035B6EF2D} = {94884791-5A84-489B-8648-9A163A1D9087}
+		{FBBAAEA3-F670-4F7F-A080-B70E595479C0} = {94884791-5A84-489B-8648-9A163A1D9087}
+		{C932EDC5-3D85-47B3-BE32-3FFBA1581833} = {94884791-5A84-489B-8648-9A163A1D9087}
+		{0F0D3396-FFB3-4126-9534-9935B75F1BA8} = {C1C81B96-67BE-4052-8611-9184999E3BEA}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{986CB283-0ACB-4708-86AE-F8856CCBAD07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{986CB283-0ACB-4708-86AE-F8856CCBAD07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{986CB283-0ACB-4708-86AE-F8856CCBAD07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{986CB283-0ACB-4708-86AE-F8856CCBAD07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C8DDBA5-60DC-408E-BD1E-658035B6EF2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C8DDBA5-60DC-408E-BD1E-658035B6EF2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C8DDBA5-60DC-408E-BD1E-658035B6EF2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C8DDBA5-60DC-408E-BD1E-658035B6EF2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBBAAEA3-F670-4F7F-A080-B70E595479C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBBAAEA3-F670-4F7F-A080-B70E595479C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBBAAEA3-F670-4F7F-A080-B70E595479C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBBAAEA3-F670-4F7F-A080-B70E595479C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C932EDC5-3D85-47B3-BE32-3FFBA1581833}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C932EDC5-3D85-47B3-BE32-3FFBA1581833}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C932EDC5-3D85-47B3-BE32-3FFBA1581833}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C932EDC5-3D85-47B3-BE32-3FFBA1581833}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F0D3396-FFB3-4126-9534-9935B75F1BA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F0D3396-FFB3-4126-9534-9935B75F1BA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F0D3396-FFB3-4126-9534-9935B75F1BA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F0D3396-FFB3-4126-9534-9935B75F1BA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
