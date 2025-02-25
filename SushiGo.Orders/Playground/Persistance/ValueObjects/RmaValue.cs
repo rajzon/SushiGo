@@ -1,4 +1,6 @@
-namespace Playground.Entities;
+using Playground.Entities;
+
+namespace Playground.Persistance.ValueObjects;
 
 public sealed record RmaValue
 {
@@ -7,11 +9,23 @@ public sealed record RmaValue
 
     public RmaValue(string rma)
     {
+        if (rma.Length != 10)
+        {
+            throw new ArgumentException($"Invalid length for rma: {rma}");
+        }
+
+        //Better approach to be use Regex - but i wanted exercise other approach
+        //rma[1..] == rma.Substring(1)
+        if ((!rma.StartsWith('S') && !rma.StartsWith('C')) || !rma[1..].All(char.IsDigit))
+        {
+            throw new ArgumentException($"Invalid rma: {rma}");
+        }
+        
         Rma = rma;
         Type = GetRmaType(rma);
     }
 
-    private RmaType GetRmaType(string rma)
+    private static RmaType GetRmaType(string rma)
     {
         if (rma.StartsWith('S'))
         {
@@ -23,6 +37,6 @@ public sealed record RmaValue
             return RmaType.Central;
         }
         
-        throw new ArgumentException($"Invalid rma type: {rma}");
+        throw new ArgumentException($"Invalid rma: {rma}");
     }
 }

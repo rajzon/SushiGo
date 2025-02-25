@@ -1,4 +1,6 @@
-﻿namespace Playground.Entities;
+﻿using Playground.Persistance.ValueObjects;
+
+namespace Playground.Entities;
 
 public sealed class Complaint : Entity, IAggregate
 {
