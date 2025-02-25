@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SushiGo.Payments", "SushiGo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SushiGo.Payments.Api", "SushiGo.Payments\SushiGo.Payments.Api\SushiGo.Payments.Api.csproj", "{0F0D3396-FFB3-4126-9534-9935B75F1BA8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground", "SushiGo.Orders\Playground\Playground.csproj", "{1E8DAC71-13EE-4AE9-9714-6CC509EAB21F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,7 @@ Global
 		{FBBAAEA3-F670-4F7F-A080-B70E595479C0} = {94884791-5A84-489B-8648-9A163A1D9087}
 		{C932EDC5-3D85-47B3-BE32-3FFBA1581833} = {94884791-5A84-489B-8648-9A163A1D9087}
 		{0F0D3396-FFB3-4126-9534-9935B75F1BA8} = {C1C81B96-67BE-4052-8611-9184999E3BEA}
+		{1E8DAC71-13EE-4AE9-9714-6CC509EAB21F} = {94884791-5A84-489B-8648-9A163A1D9087}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{986CB283-0ACB-4708-86AE-F8856CCBAD07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -47,5 +50,9 @@ Global
 		{0F0D3396-FFB3-4126-9534-9935B75F1BA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F0D3396-FFB3-4126-9534-9935B75F1BA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F0D3396-FFB3-4126-9534-9935B75F1BA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E8DAC71-13EE-4AE9-9714-6CC509EAB21F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E8DAC71-13EE-4AE9-9714-6CC509EAB21F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E8DAC71-13EE-4AE9-9714-6CC509EAB21F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E8DAC71-13EE-4AE9-9714-6CC509EAB21F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
