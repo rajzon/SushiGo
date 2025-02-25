@@ -1,0 +1,23 @@
+﻿services:
+  db:
+    container_name: sql-server-db
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      SA_PASSWORD: admin
+      ACCEPT_EULA: Y
+    ports:
+    - 1433:1433
+  
+  rabbit-mq-playground:
+    build:
+      context: ./rabbit-mq
+      dockerfile: ./Dockerfile
+    image: rabbitmq-custom
+    container_name: rabbit-mq-playground
+    hostname: rabbit-mq
+    ports:
+      - '5672:5672'
+      - '15672:15672'
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
