@@ -3,11 +3,12 @@
 using Playground;
 using Playground.Proxy;
 using Playground.ResultPattern;
+using Playground.Strategy;
 using Playground.TaskWhenWaitAll;
 
 Console.WriteLine("Hello, World!");
 List<IPlayground> playgrounds = [new ResultPatternPlayground(), new ProxyPatternPlayground()];
-List<IPlaygroundAsync> playgroundsAsync = [new TaskWhenWaitAllPlayground()];
+List<IPlaygroundAsync> playgroundsAsync = [new TaskWhenWaitAllPlayground(), new StrategyPlayground()];
 
 foreach (var playground in playgrounds)
 {
@@ -16,5 +17,8 @@ foreach (var playground in playgrounds)
 
 foreach (var playgroundAsync in playgroundsAsync)
 {
-    await playgroundAsync.Run();
+    if (playgroundAsync is not TaskWhenWaitAllPlayground)
+    {
+        await playgroundAsync.Run();
+    }
 }

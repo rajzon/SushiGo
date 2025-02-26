@@ -29,7 +29,6 @@
       <Folder Include="Decorator\" />
       <Folder Include="GroupBy\" />
       <Folder Include="RangeIndexers\" />
-      <Folder Include="Strategy\" />
       <Folder Include="TreeDataStructureAndMemory\" />
     </ItemGroup>
 
