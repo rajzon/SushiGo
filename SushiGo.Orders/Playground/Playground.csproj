@@ -9,10 +9,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="RangeIndexers\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.2" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.2">
         <PrivateAssets>all</PrivateAssets>
@@ -25,6 +21,16 @@
       <Content Include="..\..\.dockerignore">
         <Link>.dockerignore</Link>
       </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="ChainOfResponsibility\" />
+      <Folder Include="Dates\" />
+      <Folder Include="Decorator\" />
+      <Folder Include="GroupBy\" />
+      <Folder Include="RangeIndexers\" />
+      <Folder Include="Strategy\" />
+      <Folder Include="TreeDataStructureAndMemory\" />
     </ItemGroup>
 
 </Project>

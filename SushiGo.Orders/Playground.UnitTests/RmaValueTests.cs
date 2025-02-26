@@ -4,7 +4,7 @@ using Playground.Persistance.ValueObjects;
 
 namespace Playground.UnitTests;
 
-public class UnitTest1
+public class RmaValueTests
 {
     [Theory]
     [InlineData("S123456789", RmaType.Shop)]
@@ -33,8 +33,6 @@ public class UnitTest1
     [InlineData("C12345678")]
     public void Create_ShouldFailCreateRma_WhenRmaNotValidLength(string input)
     {
-        const int length = 10;
-        
         Action act = () => new RmaValue(input);
         act.Should().Throw<ArgumentException>().WithMessage($"Invalid length for rma: {input}");
     }
