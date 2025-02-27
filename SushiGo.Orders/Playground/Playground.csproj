@@ -29,7 +29,6 @@
       <Folder Include="Dates\" />
       <Folder Include="Decorator\" />
       <Folder Include="GroupBy\" />
-      <Folder Include="RangeIndexers\" />
       <Folder Include="TreeDataStructureAndMemory\" />
     </ItemGroup>
 
