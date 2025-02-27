@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using Playground;
+using Playground.Dates;
 using Playground.Proxy;
 using Playground.RangeIndexersAndStringManipulation;
 using Playground.ResultPattern;
@@ -8,7 +9,7 @@ using Playground.Strategy;
 using Playground.TaskWhenWaitAll;
 
 Console.WriteLine("Hello, World!");
-List<IPlayground> playgrounds = [new ResultPatternPlayground(), new ProxyPatternPlayground(), new RangeIndexersAndStringManipulationPlayground()];
+List<IPlayground> playgrounds = [new ResultPatternPlayground(), new ProxyPatternPlayground(), new RangeIndexersAndStringManipulationPlayground(), new DatesPlayground()];
 List<IPlaygroundAsync> playgroundsAsync = [new TaskWhenWaitAllPlayground(), new StrategyPlayground()];
 
 foreach (var playground in playgrounds)

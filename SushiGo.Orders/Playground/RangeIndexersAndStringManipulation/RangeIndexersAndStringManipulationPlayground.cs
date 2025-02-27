@@ -5,7 +5,7 @@ internal sealed class RangeIndexersAndStringManipulationPlayground : IPlayground
     public void Run()
     {
         Console.WriteLine("---------------- RangeIndexersAndStringManipulation --------------"); //TODO use Factory/builder or some pattern to put this delimeter for each playgorund
-        Console.WriteLine("------------------- StringManipulation ----------------");
+        Console.WriteLine("------------------- RangeIndexersAndStringManipulation.StringManipulation ----------------");
         var str = "testowy string";
         Console.WriteLine($"Original string: '{str}'");
         
@@ -23,7 +23,7 @@ internal sealed class RangeIndexersAndStringManipulationPlayground : IPlayground
         var isDigitsOnly = str.All(char.IsDigit);
         Console.WriteLine($"IsAllDigitsOnly: (str.All(char.IsDigit)) '{isDigitsOnly}'");
 
-        Console.WriteLine("------------------- ArrayManipulation ----------------");
+        Console.WriteLine("------------------- RangeIndexersAndStringManipulation.ArrayManipulation ----------------");
         List<string> lines = ["one", "two", "three", "four", "five"];
         Console.WriteLine($"Original list: '{string.Join(',', lines)}'");
         

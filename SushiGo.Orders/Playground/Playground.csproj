@@ -25,10 +25,10 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="CacheResponseOutputCache\" />
       <Folder Include="ChainOfResponsibility\" />
-      <Folder Include="Dates\" />
       <Folder Include="Decorator\" />
-      <Folder Include="GroupBy\" />
+      <Folder Include="LinqGroupByEtc\" />
       <Folder Include="TreeDataStructureAndMemory\" />
     </ItemGroup>
 
