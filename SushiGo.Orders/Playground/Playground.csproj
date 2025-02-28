@@ -27,7 +27,7 @@
     <ItemGroup>
       <Folder Include="CacheResponseOutputCache\" />
       <Folder Include="ChainOfResponsibility\" />
-      <Folder Include="Decorator\" />
+      <Folder Include="Composite\" />
       <Folder Include="LinqGroupByEtc\" />
       <Folder Include="TreeDataStructureAndMemory\" />
     </ItemGroup>

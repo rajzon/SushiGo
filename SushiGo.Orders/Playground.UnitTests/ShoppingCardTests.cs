@@ -4,10 +4,10 @@ using Playground.Strategy;
 
 namespace Playground.UnitTests;
 
-public class ShoppingCardTests
+public class ShoppingCardAdapterTests
 {
     private readonly IPaymentStrategy _paymentStrategy = Substitute.For<IPaymentStrategy>();
-    private readonly ShoppingCard _sut = new ShoppingCard();
+    private readonly ShoppingCardAdapter _sut = new ShoppingCardAdapter();
 
     private void SetupDefaultPayment()
     {

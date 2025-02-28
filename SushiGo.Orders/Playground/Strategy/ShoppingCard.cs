@@ -1,6 +1,6 @@
 ﻿namespace Playground.Strategy;
 
-internal sealed class ShoppingCard
+internal sealed class ShoppingCardAdapter
 {
     private IPaymentStrategy? _paymentStrategy;
     //Various different things needed for shopping card to work etc.

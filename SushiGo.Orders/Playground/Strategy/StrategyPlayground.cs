@@ -7,7 +7,7 @@ internal sealed class StrategyPlayground : IPlaygroundAsync
     public async Task Run()
     {
         Console.WriteLine("---------------- Strategy --------------"); //TODO use Factory/builder or some pattern to put this delimeter for each playgorund
-        var shoppingCard = new ShoppingCard();
+        var shoppingCard = new ShoppingCardAdapter();
         shoppingCard.SetPayment(new CreditCardStrategy("123456", "000"));
         
         await shoppingCard.Checkout(100_000m);
