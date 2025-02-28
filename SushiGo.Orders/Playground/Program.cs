@@ -2,6 +2,7 @@
 
 using Playground;
 using Playground.Adapter;
+using Playground.ChainOfResponsibility;
 using Playground.Composite;
 using Playground.Dates;
 using Playground.Decorator;
@@ -14,6 +15,7 @@ using Playground.TemplateMethod;
 using Playground.Visitor;
 
 Console.WriteLine("Hello, World!");
+
 List<IPlayground> playgrounds =
 [
     new ResultPatternPlayground(), 
@@ -24,7 +26,8 @@ List<IPlayground> playgrounds =
     new DecoratorPlayground(),
     new AdapterPlayground(),
     new TemplateMethodPlayground(),
-    new CompositePlayground()
+    new CompositePlayground(),
+    new ChainOfResponsibilityPlayground()
 ];
 List<IPlaygroundAsync> playgroundsAsync = [new TaskWhenWaitAllPlayground(), new StrategyPlayground()];
 
