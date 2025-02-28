@@ -9,6 +9,7 @@ using Playground.Decorator;
 using Playground.Proxy;
 using Playground.RangeIndexersAndStringManipulation;
 using Playground.ResultPattern;
+using Playground.State;
 using Playground.Strategy;
 using Playground.TaskWhenWaitAll;
 using Playground.TemplateMethod;
@@ -27,7 +28,8 @@ List<IPlayground> playgrounds =
     new AdapterPlayground(),
     new TemplateMethodPlayground(),
     new CompositePlayground(),
-    new ChainOfResponsibilityPlayground()
+    new ChainOfResponsibilityPlayground(),
+    new StatePlayground()
 ];
 List<IPlaygroundAsync> playgroundsAsync = [new TaskWhenWaitAllPlayground(), new StrategyPlayground()];
 
