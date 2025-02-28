@@ -2,6 +2,7 @@
 
 using Playground;
 using Playground.Adapter;
+using Playground.Composite;
 using Playground.Dates;
 using Playground.Decorator;
 using Playground.Proxy;
@@ -9,6 +10,7 @@ using Playground.RangeIndexersAndStringManipulation;
 using Playground.ResultPattern;
 using Playground.Strategy;
 using Playground.TaskWhenWaitAll;
+using Playground.TemplateMethod;
 using Playground.Visitor;
 
 Console.WriteLine("Hello, World!");
@@ -20,7 +22,9 @@ List<IPlayground> playgrounds =
     new DatesPlayground(), 
     new VisitorPlayground(), 
     new DecoratorPlayground(),
-    new AdapterPlayground()
+    new AdapterPlayground(),
+    new TemplateMethodPlayground(),
+    new CompositePlayground()
 ];
 List<IPlaygroundAsync> playgroundsAsync = [new TaskWhenWaitAllPlayground(), new StrategyPlayground()];
 
