@@ -6,6 +6,7 @@ using Playground.ChainOfResponsibility;
 using Playground.Composite;
 using Playground.Dates;
 using Playground.Decorator;
+using Playground.LinqGroupByEtc;
 using Playground.Proxy;
 using Playground.RangeIndexersAndStringManipulation;
 using Playground.ResultPattern;
@@ -29,7 +30,8 @@ List<IPlayground> playgrounds =
     new TemplateMethodPlayground(),
     new CompositePlayground(),
     new ChainOfResponsibilityPlayground(),
-    new StatePlayground()
+    new StatePlayground(),
+    new LinqPlayground()
 ];
 List<IPlaygroundAsync> playgroundsAsync = [new TaskWhenWaitAllPlayground(), new StrategyPlayground()];
 

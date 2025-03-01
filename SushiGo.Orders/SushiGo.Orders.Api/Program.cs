@@ -1,6 +1,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OutputCaching;
 using RabbitMQ.Client;
 using Scalar.AspNetCore;
 
@@ -19,8 +20,14 @@ public class Program
             options.SerializerOptions.TypeInfoResolverChain.Insert(0, AppJsonSerializerContext.Default);
         });
         builder.Services.AddSingleton<IRabbitMqClient, RabbitMqClient>();
+        builder.Services.AddOutputCache(options =>
+        {
+            options.AddBasePolicy(builder => builder.Expire(TimeSpan.FromSeconds(20)));
+            options.AddPolicy("Expire5", builder => builder.Expire(TimeSpan.FromSeconds(50)).Tag("tag-id"));
+        });
 
         var app = builder.Build();
+        app.UseOutputCache();
         app.UseSwagger(options =>
         {
             options.RouteTemplate = "/openapi/{documentName}.json";
@@ -40,11 +47,25 @@ public class Program
         };
 
         var todosApi = app.MapGroup("/todos");
-        todosApi.MapGet("/", () => sampleTodos);
-        todosApi.MapGet("/{id}", (int id) =>
+        todosApi.MapGet("/",() => sampleTodos).CacheOutput();
+        todosApi.MapGet("/{id}", [OutputCache(PolicyName = "Expire5")](int id) =>
             sampleTodos.FirstOrDefault(a => a.Id == id) is { } todo
                 ? Results.Ok(todo)
                 : Results.NotFound());
+        
+        todosApi.MapPost("/purge/{tag}", async (IOutputCacheStore cache, string tag) =>
+        {
+            //by using cache store we can evict outpu cache based on assiged to it tag
+            await cache.EvictByTagAsync(tag, default);
+        });
+        
+        // todosApi.MapGet("/etag", (context) =>
+        // {
+        //     var etag = $"\"{Guid.NewGuid():n}\"";
+        //     context.Response.Headers.ETag = etag;
+        //     var bytes = System.Text.Encoding.UTF8.GetBytes(etag);
+        //     return
+        // }).CacheOutput();
 
         todosApi.MapPost("/rabbit-direct", async (RabbitRequest request, [FromServices] IRabbitMqClient rabbitMqClient) =>
         {
