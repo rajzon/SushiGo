@@ -7,6 +7,7 @@ using Playground.Composite;
 using Playground.Dates;
 using Playground.Decorator;
 using Playground.LinqGroupByEtc;
+using Playground.NewIfs;
 using Playground.Proxy;
 using Playground.RangeIndexersAndStringManipulation;
 using Playground.ResultPattern;
@@ -31,7 +32,8 @@ List<IPlayground> playgrounds =
     new CompositePlayground(),
     new ChainOfResponsibilityPlayground(),
     new StatePlayground(),
-    new LinqPlayground()
+    new LinqPlayground(),
+    new NewIfsPlayground()
 ];
 List<IPlaygroundAsync> playgroundsAsync = [new TaskWhenWaitAllPlayground(), new StrategyPlayground()];
 
