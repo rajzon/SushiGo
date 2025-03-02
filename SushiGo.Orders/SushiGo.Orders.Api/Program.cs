@@ -1,5 +1,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using CloudNative.CloudEvents;
+using CloudNative.CloudEvents.SystemTextJson;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OutputCaching;
 using RabbitMQ.Client;
@@ -76,7 +78,18 @@ public class Program
             await channel.ExchangeDeclareAsync(exchangeName, ExchangeType.Direct);
             await channel.QueueDeclareAsync(queueName, durable: true, exclusive: false, autoDelete: false, arguments: null);
             await channel.QueueBindAsync(queue: queueName, exchange: exchangeName, routingKey: routingKey, arguments: null);
-            byte[] messageBodyBytes = System.Text.Encoding.UTF8.GetBytes(JsonSerializer.Serialize(request));
+            var evtWrapper = new CloudEvent
+            {
+                Type = "my_cloud_event",
+                Source = new Uri("http://localhost:5252"),
+                Time = DateTimeOffset.Now,
+                DataContentType = "application/json",
+                Id = Guid.NewGuid().ToString(),
+                Data = request
+            };
+            var evtFormatter = new JsonEventFormatter();
+            var json = evtFormatter.ConvertToJsonElement(evtWrapper).ToString();
+            byte[] messageBodyBytes = System.Text.Encoding.UTF8.GetBytes(json);
 
             var props = new BasicProperties();
             props.ContentType = "application/json";
@@ -87,6 +100,7 @@ public class Program
                 mandatory: false,
                 basicProperties: props,
                 body: messageBodyBytes);
+            return Results.Accepted();
         });
 
         app.Run();
