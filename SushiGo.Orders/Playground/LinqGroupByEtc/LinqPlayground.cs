@@ -44,6 +44,19 @@ internal sealed class LinqPlayground : IPlayground
     public void Run()
     {
         Console.WriteLine("---------------- LinqPlayground --------------"); //TODO use Factory/builder or some pattern to put this delimeter for each playgorund
+        int length = 10;
+        Console.WriteLine("For loop");
+        for (int i = 0; i < length; i++)
+        {
+            Console.WriteLine($"For loop index {i}");
+        }
+
+        Console.WriteLine("Enumerable Range");
+        Enumerable.Range(0, 10).ToList().ForEach(index =>
+        {
+            Console.WriteLine($"Enumerable Range loop index {index}");
+        });
+        
         
         List<User> users = [
             new User("User 1", "User 1 Surname", "Group1", roles), 
