@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using AutoMapper;
 using Playground;
 using Playground.Adapter;
 using Playground.ChainOfResponsibility;
@@ -13,6 +14,7 @@ using Playground.RangeIndexersAndStringManipulation;
 using Playground.ResultPattern;
 using Playground.State;
 using Playground.Strategy;
+using Playground.StringComparsion;
 using Playground.TaskWhenWaitAll;
 using Playground.TemplateMethod;
 using Playground.Visitor;
@@ -33,7 +35,8 @@ List<IPlayground> playgrounds =
     new ChainOfResponsibilityPlayground(),
     new StatePlayground(),
     new LinqPlayground(),
-    new NewIfsPlayground()
+    new NewIfsPlayground(),
+    new StringComparsion()
 ];
 List<IPlaygroundAsync> playgroundsAsync = [new TaskWhenWaitAllPlayground(), new StrategyPlayground()];
 
@@ -49,3 +52,6 @@ foreach (var playgroundAsync in playgroundsAsync)
         await playgroundAsync.Run();
     }
 }
+
+var config = new MapperConfiguration(cfg => { });
+var test = config.CreateMapper();

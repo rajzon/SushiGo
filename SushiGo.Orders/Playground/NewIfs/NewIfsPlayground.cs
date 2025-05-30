@@ -9,6 +9,7 @@ internal sealed class NewIfsPlayground : IPlayground
 {
     public void Run()
     {
+        Console.WriteLine("---------------- NewIfsPlayground --------------");
         var number = new Random().Next(30);
         var obj = new ObjectNewIfs() { SomeNumber = 21 };
         

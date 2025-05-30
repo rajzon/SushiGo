@@ -23,7 +23,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Playground\Playground.csproj" />
+        <ProjectReference Include="..\Playground\Playground.csproj" >
+<!--            <PrivateAssets>All</PrivateAssets>-->
+        </ProjectReference>
     </ItemGroup>
 
 </Project>

@@ -1,4 +1,6 @@
+using AutoMapper;
 using FluentAssertions;
+using Microsoft.Extensions.Options;
 using Playground.Entities;
 using Playground.Persistance.ValueObjects;
 
@@ -22,7 +24,8 @@ public class RmaValueTests
     [InlineData("1234456789")]
     public void Create_ShouldFailCreateRma_WhenRmaNotValidFormat(string input)
     {
-        
+        var config = new MapperConfiguration(cfg => { });
+        var test = config.CreateMapper();
         Action act = () => new RmaValue(input);
         
         act.Should().Throw<ArgumentException>().WithMessage($"Invalid rma: {input}");
