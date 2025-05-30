@@ -54,4 +54,5 @@ foreach (var playgroundAsync in playgroundsAsync)
 }
 
 var config = new MapperConfiguration(cfg => { });
+//test
 var test = config.CreateMapper();
